@@ -9,6 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  */
 class TC_Elementor_Product extends \Elementor\Widget_Base {
+	const PRODUCT_ID_KEY = 'wc_pid';
 
 	/**
 	 * Get widget name.
@@ -107,12 +108,10 @@ class TC_Elementor_Product extends \Elementor\Widget_Base {
 		);
 
 		$this->add_control(
-			'url',
+			self::PRODUCT_ID_KEY,
 			[
-				'label' => esc_html__( 'URL to embed', 'elementor-oembed-widget' ),
-				'type' => \Elementor\Controls_Manager::TEXT,
-				'input_type' => 'url',
-				'placeholder' => esc_html__( 'https://your-link.com', 'elementor-oembed-widget' ),
+				'label' => esc_html__( 'WooCommerce Product ID', 'elementor-oembed-widget' ),
+				'type' => \Elementor\Controls_Manager::NUMBER,
 			]
 		);
 
@@ -131,10 +130,10 @@ class TC_Elementor_Product extends \Elementor\Widget_Base {
 	protected function render() {
 
 		$settings = $this->get_settings_for_display();
-		$html = wp_oembed_get( $settings['url'] );
+		$wc_pid = $settings[self::PRODUCT_ID_KEY];
 
 		echo '<div class="oembed-elementor-widget">';
-		echo ( $html ) ? $html : $settings['url'];
+			echo $wc_pid;
 		echo '</div>';
 
 	}
