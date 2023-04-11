@@ -131,11 +131,21 @@ class TC_Elementor_Product extends \Elementor\Widget_Base {
 
 		$settings = $this->get_settings_for_display();
 		$wc_pid = $settings[self::PRODUCT_ID_KEY];
-
-		echo '<div class="oembed-elementor-widget">';
-			echo $wc_pid;
-		echo '</div>';
-
+		$product = wc_get_product($wc_pid);
+		?>
+		<div class="tc-product-elementor-widget">
+			<h3><?php esc_html_e($product->get_title()); ?></h3>
+			<div class="image">
+				<?php echo wp_kses_post($product->get_image()); ?>
+			</div>
+			<div class="description">
+				<?php echo wp_kses_post($product->get_short_description()); ?>
+			</div>
+			<div class="cta">
+				<a href="<?php echo esc_attr($product->get_permalink()); ?>" class="button"><?php echo __( 'LEARN MORE', 'elementor-widgets-for-tc' ); ?></a>
+			</div>
+		</div>
+		<?php
 	}
 
 }
