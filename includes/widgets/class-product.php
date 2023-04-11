@@ -17,7 +17,7 @@ class Product extends \Elementor\Widget_Base {
 	/**
 	 * Get widget name.
 	 *
-	 * Retrieve oEmbed widget name.
+	 * Retrieve TC Product widget name.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -30,20 +30,20 @@ class Product extends \Elementor\Widget_Base {
 	/**
 	 * Get widget title.
 	 *
-	 * Retrieve oEmbed widget title.
+	 * Retrieve TC Product widget title.
 	 *
 	 * @since 1.0.0
 	 * @access public
 	 * @return string Widget title.
 	 */
 	public function get_title() {
-		return esc_html__( 'Product by Trading Computers', 'elementor-oembed-widget' );
+		return esc_html__( 'Product by Trading Computers', 'elementor-widgets-for-tc' );
 	}
 
 	/**
 	 * Get widget icon.
 	 *
-	 * Retrieve oEmbed widget icon.
+	 * Retrieve TC Product widget icon.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -69,7 +69,7 @@ class Product extends \Elementor\Widget_Base {
 	/**
 	 * Get widget categories.
 	 *
-	 * Retrieve the list of categories the oEmbed widget belongs to.
+	 * Retrieve the list of categories the TC Product widget belongs to.
 	 *
 	 * @since 1.0.0
 	 * @access public
@@ -82,18 +82,18 @@ class Product extends \Elementor\Widget_Base {
 	/**
 	 * Get widget keywords.
 	 *
-	 * Retrieve the list of keywords the oEmbed widget belongs to.
+	 * Retrieve the list of keywords the TC Product widget belongs to.
 	 *
 	 * @since 1.0.0
 	 * @access public
 	 * @return array Widget keywords.
 	 */
 	public function get_keywords() {
-		return [ 'oembed', 'url', 'link' ];
+		return [ 'product', 'url', 'link' ];
 	}
 
 	/**
-	 * Register oEmbed widget controls.
+	 * Register TC Product widget controls.
 	 *
 	 * Add input fields to allow the user to customize the widget settings.
 	 *
@@ -105,7 +105,7 @@ class Product extends \Elementor\Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => esc_html__( 'Content', 'elementor-oembed-widget' ),
+				'label' => esc_html__( 'Content', 'elementor-widgets-for-tc' ),
 				'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -113,7 +113,7 @@ class Product extends \Elementor\Widget_Base {
 		$this->add_control(
 			self::PRODUCT_ID_KEY,
 			[
-				'label' => esc_html__( 'WooCommerce Product ID', 'elementor-oembed-widget' ),
+				'label' => esc_html__( 'WooCommerce Product ID', 'elementor-widgets-for-tc' ),
 				'type' => \Elementor\Controls_Manager::NUMBER,
 			]
 		);
@@ -123,7 +123,7 @@ class Product extends \Elementor\Widget_Base {
 	}
 
 	/**
-	 * Render oEmbed widget output on the frontend.
+	 * Render TC Product widget output on the frontend.
 	 *
 	 * Written in PHP and used to generate the final HTML.
 	 *
