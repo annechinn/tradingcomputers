@@ -1,4 +1,7 @@
 <?php
+
+namespace Trading_Computers\Elementor\Widgets;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
@@ -8,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  */
-class TC_Elementor_Product extends \Elementor\Widget_Base {
+class Product extends \Elementor\Widget_Base {
 	const PRODUCT_ID_KEY = 'wc_pid';
 
 	/**

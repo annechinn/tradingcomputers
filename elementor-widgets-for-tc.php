@@ -3,7 +3,7 @@
 /*
  * Plugin Name:       Elementor Widgets for Trading Computers
  * Description:       Adds an Elementor Widget for Trading Computers
- * Version:           0.0
+ * Version:           0.1.1
  * Text Domain:       elementor-widgets-for-tc
  */
 
@@ -13,6 +13,6 @@
 
 define('TC_ELEMENTOR_PLUGIN_DIR', plugin_dir_path(__FILE__) );
 
-require_once 'includes/TC_Elementor_Widgets_Init.php';
+require_once 'includes/class-init.php';
 
-( new TC_Elementor_Widgets_Init() )->init();
+( new \Trading_Computers\Elementor\Init() )->init();
