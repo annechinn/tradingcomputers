@@ -128,7 +128,6 @@ class TC_Elementor_Product extends \Elementor\Widget_Base {
 	 * @access protected
 	 */
 	protected function render() {
-
 		$settings = $this->get_settings_for_display();
 		$wc_pid = $settings[self::PRODUCT_ID_KEY];
 		$product = wc_get_product($wc_pid);
