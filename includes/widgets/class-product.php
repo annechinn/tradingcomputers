@@ -137,10 +137,13 @@ class Product extends \Elementor\Widget_Base {
 		?>
 		<div class="tc-product-elementor-widget">
 			<h3><?php esc_html_e($product->get_title()); ?></h3>
+			<div class="price">
+				<?php echo $product->get_price_html(); ?>
+			</div>
 			<div class="image">
 				<?php echo wp_kses_post($product->get_image()); ?>
 			</div>
-			<div class="description">
+			<div class="short-desc">
 				<?php echo wp_kses_post($product->get_short_description()); ?>
 			</div>
 			<div class="cta">
